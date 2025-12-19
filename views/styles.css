@@ -1,0 +1,14 @@
+#heading {
+    color: white;
+    text-align: center;
+}
+#Manual {
+    font-family:'Times New Roman', Times, serif;
+    color: white;
+}
+#Box {
+    width : 400px;
+}
+body {
+    background-color: #1b1b1a;
+}

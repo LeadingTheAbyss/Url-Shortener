@@ -2,11 +2,17 @@ const { nanoid } = require("nanoid");
 const URL = require("../models/url");
 
 async function generateShortUrl(req, res) {
-    const { url } = req.body || {};
+    
+    let { url } = req.body;
 
     if (!url) {
         return res.status(400).json({ error: "url is required" });
     }
+
+    if (!url.startsWith("http://") && !url.startsWith("https://")) {
+        url = "https://" + url;
+    }
+
 
     const shortId = nanoid(8);
 
@@ -16,7 +22,9 @@ async function generateShortUrl(req, res) {
         visitHistory: [],
     });
 
-    return res.json({ id: shortId });
+    return res.render("home", {
+        id: shortId,
+    });
 }
 
 async function handleRedirect(req, res) {

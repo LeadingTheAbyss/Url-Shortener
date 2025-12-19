@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>This is my cute website hahaha</title>
+        <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <h1 id = "heading"> Url Shortener Website </h1>
+    <br>
+    <% if (locals.id) { %>
+        <p> The generated URL is: http://localhost:8001/url/<%- id %></p>
+    <% } %>
+    <br>
+    <div id = "Box">
+        <form action = "/url/" method = "POST">
+        <input type = "text" name = "url" placeholder="Enter your website's link here" size = "23" required> 
+        <button type = "submit"> Submit </button>
+        </form>
+    </div>
+    <br>
+    <br>
+    <div id = "Manual">
+    <p>This website will come in handy really to shorten your long url's.</p>
+    <p>You can shorten you url's by simply entering them in the above section and you'll receive the shortened version of your url.</p>
+    </div>
+</body>
+</html>
